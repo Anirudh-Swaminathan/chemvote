@@ -14,6 +14,7 @@
     "express-validator": "^2.20.10",
     "morgan": "~1.7.0",
     "mysql": "^2.11.1",
+    "redis": "^2.6.2",
     "request-ip": "^1.2.2",
     "sequelize": "^3.24.4",
     "serve-favicon": "~2.3.0"

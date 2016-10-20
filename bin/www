@@ -34,8 +34,8 @@ var mysql = require('mysql');
 
 var conn = mysql.createConnection({
   host  :  'localhost',
-  user  :  'root',
-  password  : 'capital1197',
+  user  :  'chemdevs',
+  password  : 'sec_re7Pwd',
   database  : 'vote'
 });
 app.locals.connection = conn;
