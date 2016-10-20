@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+  <div class="container">
+    <h1>Chemical Official CR Elections</h1>
+    <p id="errorPara"></p>
+    <h2><p>Choose to VOTE:</p></h2>
+    <br><br>
+    <form role="form" id="voteform" action="/submitVote" method="post">
+      <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="votedCandidateBoy" id="votedCandidate1" value="Pious" checked="checked">Pious
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="votedCandidateBoy" id="votedCandidate2" value="Vishnu(JVP)">Vishnu(JVP)
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="votedCandidateGirl" id="votedCandidate3" value="Harini" checked="checked">Harini
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="votedCandidateGirl" id="votedCandidate4" value="Tejashri">Tejashri
+        </label>
+      </div>
+      <br><br><br>
+      <button type="submit" class="btn btn-default">Submit Vote</button>
+    </form>
+  </div>
+  <br><br>
+  <button onclick="window.location='/'">HOME</button>
+  <button onclick="window.location='/seeResult'">Current Vote Standings/Result</button>
+  <button onclick="window.location='/showMyIp'">Reveal my IP</button>
+  </body>
+  <script type="text/javascript" src="javascripts/vote.js"></script>
+</html>
+
