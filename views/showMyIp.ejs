@@ -3,12 +3,40 @@
   <head>
     <title>IpAddress</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+
+		#ulId {
+			background-color: #000000;
+		}
+
+		#active {
+			color: #ff0055;
+		}
+
+		h1, h2, h3 {
+			color: #ff0055;
+		}
+
+	</style>
   </head>
   <body>
-    <h1><%= ip %></h1>
-    <p>My Ip is : <%= ip %></p>
-    <button onclick="window.location='/'">HOME</button>
-    <button onclick="window.location='/vote'">VOTE!</button>
-    <button onclick="window.location='/seeResult'">Current Vote Standings/Result</button>
+	<div class="container">
+		
+		<ul class="breadcrumb" id="ulId">
+			<li><a href="/">Home</a></li>
+			<li><a href="/vote">Vote</a></li>
+			<li id="active">Show IP</li>
+			<li><a href="/register">Register</a></li>
+			<li><a href="/show/all">View Contestants</a></li>
+		</ul>
+	    
+	    <h1><%= ip %></h1>
+	    <p>My Ip is : <%= ip %></p>
+    </div>
   </body>
 </html>
