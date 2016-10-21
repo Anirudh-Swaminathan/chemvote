@@ -43,7 +43,7 @@ router.get('/', function(req, res, next) {
    				maxGirl.name = row.name;
    			}
    			if(row.gender=="F" && maxGirl.votes == row.votes && (maxGirl.name != row.name)) {
-   				maxGirl.name = maxGirl.name + " &(and)& " + row.name;
+   				maxGirl.name = maxGirl.name + " and " + row.name;
    			}
    		});
   		boyCR = maxBoy.name;

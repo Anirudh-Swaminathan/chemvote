@@ -1,16 +1,51 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+
     <title><%= title %></title>
+
     <link rel='stylesheet' href='/stylesheets/style.css' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+
+		#ulId {
+			background-color: #000000;
+		}
+
+		#active {
+			color: #ff0055;
+		}
+
+		h1, h2, h3 {
+			color: #ff0055;
+		}
+
+	</style>
+
   </head>
+  
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <button onclick="window.location='/vote'">VOTE!</button>
-    <button onclick="window.location='/seeResult'">Current Vote Standings/Result</button>
-    <button onclick="window.location='/showMyIp'">Reveal my IP</button>
-    <button onclick="window.location='/register'">Register</button>
-    <button onclick="window.location='/show/all'">Show All Registered Contestants</button>
+	<div class="container">
+		
+		<ul class="breadcrumb" id="ulId">
+			<li id="active">Home</li>
+			<li><a href="/vote">Vote</a></li>
+			<li><a href="/showMyIp">Show IP</a></li>
+			<li><a href="/register">Register</a></li>
+			<li><a href="/show/all">View Contestants</a></li>
+		</ul>
+	    
+	    <h1><%= title %></h1>
+	    <br>
+	    <h3>Welcome to <%= title %></h3>
+
+	</div>
+  
   </body>
+
 </html>

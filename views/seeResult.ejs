@@ -3,13 +3,42 @@
   <head>
     <title>Results</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+
+		#ulId {
+			background-color: #000000;
+		}
+
+		#active {
+			color: #ff0055;
+		}
+
+		h1, h2, h3 {
+			color: #ff0055;
+		}
+
+
+	</style>
   </head>
   <body>
+  <div class="container">
+		
+		<ul class="breadcrumb" id="ulId">
+			<li><a href="/">Home</a></li>
+			<li><a href="/vote">Vote</a></li>
+			<li><a href="/showMyIp">Show IP</a></li>
+			<li><a href="/register">Register</a></li>
+			<li><a href="/show/all">View Contestants</a></li>
+		</ul>
     <h1>Results</h1>
     <h2><p>The CRs run for 4th semester are: </p></h2><br>
     <h1><p>Girl top Votes: "<%= CRG %>" --votes: <%= VG %> <br> Boy winner: "<%= CRB %>" --votes: <%= VB %></p></h1>
-    <button onclick="window.location='/'">HOME</button>
-    <button onclick="window.location='/vote'">VOTE!</button>
-    <button onclick="window.location='/showMyIp'">Reveal my IP</button>
+
+  </div>
   </body>
 </html>

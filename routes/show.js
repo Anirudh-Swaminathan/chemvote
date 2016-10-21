@@ -23,7 +23,7 @@ router.get('/all', function(req, res, next) {
 router.get('/:name', function(req, res, next){
     var name = req.params.name;
     var conn = req.app.locals.connection;
-    conn.query("SELECT name, gender, agenda FROM vote.Votes WHERE name=?", name, function(err, rows, fields){
+    conn.query("SELECT name, gender, agenda FROM vote.Votes WHERE name LIKE ?", name + "%", function(err, rows, fields){
         if(err) {
             res.render('showCont', {errors : err.msg, name : '', gender : '', agenda : ''});
         } else {

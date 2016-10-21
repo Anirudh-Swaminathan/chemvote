@@ -30,13 +30,19 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 //
+var path = require('path');
 var mysql = require('mysql');
+var config = require(path.join(__dirname + "/../" + "config/registerConfig"));
+var mysqlUser = config.mysqlUser;
+var mysqlPass = config.mysqlPass;
+var mysqlDb = config.mysqlDb;
+var host = config.mysqlHost;
 
 var conn = mysql.createConnection({
-  host  :  'localhost',
-  user  :  'chemdevs',
-  password  : 'sec_re7Pwd',
-  database  : 'vote'
+  host  :  host,
+  user  :  mysqlUser,
+  password  : mysqlPass,
+  database  : mysqlDb
 });
 app.locals.connection = conn;
 conn.connect();

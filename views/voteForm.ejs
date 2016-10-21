@@ -1,49 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootstrap Example</title>
+    <title>Vote</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <style>
+
+        #ulId {
+          background-color: #000000;
+        }
+
+        #active {
+          color: #ff0055;
+        }
+
+        h1, h2, h3 {
+          color: #ff0055;
+        }
+
+    </style>
   </head>
   <body>
 
   <div class="container">
+
+    <ul class="breadcrumb" id="ulId">
+      <li><a href="/">Home</a></li>
+      <li id="active">Vote</li>
+      <li><a href="/showMyIp">Show IP</a></li>
+      <li><a href="/register">Register</a></li>
+      <li><a href="/show/all">View Contestants</a></li>
+    </ul>
+
     <h1>Chemical Official CR Elections</h1>
     <p id="errorPara"></p>
     <h2><p>Choose to VOTE:</p></h2>
     <br><br>
     <form role="form" id="voteform" action="/submitVote" method="post">
+    <br>
+      <h2>Boys</h2>
+      <br>
       <div class="form-group">
         <label class="radio-inline">
-          <input type="radio" name="votedCandidateBoy" id="votedCandidate1" value="Pious" checked="checked">Pious
+          <input type="radio" name="votedCandidateBoy" id="votedCandidate1" value="Boy 1" checked="checked">Boy 1
         </label>
       </div>
       <div class="form-group">
         <label class="radio-inline">
-          <input type="radio" name="votedCandidateBoy" id="votedCandidate2" value="Vishnu(JVP)">Vishnu(JVP)
+          <input type="radio" name="votedCandidateBoy" id="votedCandidate2" value="Boy 2">Boy 2
+        </label>
+      </div>
+      <br>
+      <h2>Girls</h2>
+      <br>
+      <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="votedCandidateGirl" id="votedCandidate3" value="Girl 1" checked="checked">Girl 1
         </label>
       </div>
       <div class="form-group">
         <label class="radio-inline">
-          <input type="radio" name="votedCandidateGirl" id="votedCandidate3" value="Harini" checked="checked">Harini
-        </label>
-      </div>
-      <div class="form-group">
-        <label class="radio-inline">
-          <input type="radio" name="votedCandidateGirl" id="votedCandidate4" value="Tejashri">Tejashri
+          <input type="radio" name="votedCandidateGirl" id="votedCandidate4" value="Girl 2">Girl 2
         </label>
       </div>
       <br><br><br>
-      <button type="submit" class="btn btn-default">Submit Vote</button>
+      <button type="submit" class="btn btn-primary">Submit Vote</button>
     </form>
   </div>
-  <br><br>
-  <button onclick="window.location='/'">HOME</button>
-  <button onclick="window.location='/seeResult'">Current Vote Standings/Result</button>
-  <button onclick="window.location='/showMyIp'">Reveal my IP</button>
   </body>
   <script type="text/javascript" src="javascripts/vote.js"></script>
 </html>

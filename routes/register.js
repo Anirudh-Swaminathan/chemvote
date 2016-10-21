@@ -52,7 +52,7 @@ router.post('/', function(req, res, next) {
                 }
                 else res.render('register', {errors : 'SQL Error!!'});
             } else {
-                res.redirect('/');
+                res.render('doneRegister');
             }
         });
     } else {

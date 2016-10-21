@@ -9,6 +9,8 @@
     <meta name="pragma" content="no-cache" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!-- Optional theme -->
@@ -18,11 +20,33 @@
 
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+        #ulId {
+          background-color: #000000;
+        }
+
+        #active {
+          color: #ff0055;
+        }
+
+        h1, h2, h3 {
+          color: #ff0055;
+        }
+
+    </style>
 </head>
 <body>
   <div class="container-fluid">
+    
+    <ul class="breadcrumb" id="ulId">
+      <li><a href="/">Home</a></li>
+      <li><a href="/vote">Vote</a></li>
+      <li><a href="/showMyIp">Show IP</a></li>
+      <li id="active">Register</li>
+      <li><a href="/show/all">View Contestants</a></li>
+    </ul>
   <h1>Register</h1>
   <!--
   Error div
@@ -56,8 +80,6 @@
 
     <button type="submit" id="regBtn" class="btn btn-primary" onclick="return btnClick()">Register</button>
   </form>
-  <br/>
-  <button onclick="window.location='../'" class="btn btn-primary">Home</button>
   </div>
   <script src="../javascripts/regval.js" type="text/javascript">
   </script>
