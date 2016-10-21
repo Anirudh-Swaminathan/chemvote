@@ -21,25 +21,10 @@
   <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  <style>
 
-    #ulId {
-      background-color: #000000;
-    }
-
-    #active {
-      color: #ff0055;
-    }
-
-    h1, h2, h3 {
-      color: #ff0055;
-    }
-
-
-  </style>
 </head>
 <body>
-  <div class="container-fluid">
+  <div class="container-fluid" id="contId">
     
     <ul class="breadcrumb" id="ulId">
       <li><a href="/">Home</a></li>
@@ -59,7 +44,13 @@
 
   <div id="gender">
       <h3>Gender:</h3>
-      <h4><%= gender %></h4>
+      <h4><% if(gender == "F") { %>
+        Female
+        <% } %>
+        <% if(gender == "M") { %>
+        Male
+        <% } %>
+      </h4>
   </div>
 
   <div id="agenda">
@@ -67,9 +58,6 @@
       <%- agenda %>
   </div>
 
-  <br/>
-  <button onclick="window.location='../'" class="btn btn-primary">Home</button>
-  <button onclick="window.location='../show/all'" class="btn btn-primary">Show All contestants</button>
   </div>
 </body>
 </html>
