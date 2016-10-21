@@ -19,7 +19,7 @@ router.post('/', function(req, res, next) {
   	var votedCandidateGirl = req.body.votedCandidateGirl;
   	var ip = req.clientIp;
 	var conn = req.app.locals.connection;
- 	var query = "UPDATE Votes SET votes=votes+1 WHERE name='" + votedCandidateBoy + "' OR name='" + votedCandidateGirl +"';";
+ 	var query = "UPDATE Votes SET votes=votes+1 WHERE name LIKE '" + votedCandidateBoy + "%" + "' OR name LIKE'" + votedCandidateGirl + "%" +"';";
 
   	client.setnx(ip, 1, function(err, reply) {
 	    if(!err) {

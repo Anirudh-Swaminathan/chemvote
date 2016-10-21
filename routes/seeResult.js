@@ -1,18 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
+var path = require('path');
+var middleware = require(path.join(__dirname + "/../" + "middleware.js"));
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
+	res.render('authResult', { error: null });
+});
+
+
+router.post('/', middleware.seeResult,function(req, res, next) {
 	var conn = req.app.locals.connection;
-	/*conn.query("SELECT * FROM Votes as SOLUTION",function(err, rows, fields){
-  		if(err){
-    		console.log(err);
-    		throw err;
-    		return;
-   		}
-  		console.log("Connection to database and table successful!!");
- 	});*/
  	var boyCR = "";
  	var girlCR = "";
  	var query = "SELECT * FROM Votes;";

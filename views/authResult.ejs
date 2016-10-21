@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Contestants</title>
+  <title>Register</title>
   <meta charset="utf-8">
   <!-- Cache control -->
     <meta name="cache-control" content="no-cache" />
@@ -10,6 +10,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!-- Optional theme -->
@@ -20,23 +21,21 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-<style>
+  <style>
 
-    #ulId {
-      background-color: #000000;
-    }
+        #ulId {
+          background-color: #000000;
+        }
 
-    #active {
-      color: #ff0055;
-    }
+        #active {
+          color: #ff0055;
+        }
 
-    h1, h2, h3 {
-      color: #ff0055;
-    }
+        h1, h2, h3 {
+          color: #ff0055;
+        }
 
-
-  </style>
+    </style>
 </head>
 <body>
   <div class="container-fluid">
@@ -46,45 +45,23 @@
       <li><a href="/vote">Vote</a></li>
       <li><a href="/showMyIp">Show IP</a></li>
       <li><a href="/register">Register</a></li>
-      <li id="active">View Contestants</li>
-      <li><a href="/seeResult">RESULT</a></li>
+      <li><a href="/show/all">View Contestants</a></li>
+      <li id="active">RESULT</li>
     </ul>
-  <h1>Contestants</h1>
-  <!--
-  Error div
-  -->
-  <div id="error">
-      <p><%= errors %></p>
-  </div>
 
-  <div class="contestants" id="male">
-      <h3>Boys Contestants</h3>
-      <ul>
-          <% conts.forEach(function (contestant, index){ %>
-              <% if(contestant.gender === 'M'){ %>
-                  <% var a = contestant.name; var hre = '/show/'+a; %>
-                  <li><a href = <%= hre %> ><%= contestant.name %></a></li>
-              <% } %>
-          <% }); %>
-      </ul>
-  </div>
+    <% if(error) { %>
+      <h3><%= error %><h3>
+    <% } %>
 
-  <div class="contestants" id="female">
-      <h3>Girls Contestants</h3>
-      <ul>
-          <% conts.forEach(function (contestant, index){ %>
-              <% if(contestant.gender === 'F'){ %>
-                  <% var a = contestant.name; var hre = '/show/'+a; %>
-                  <li><a href = <%= hre %> ><%= contestant.name %></a></li>
-              <% } %>
-          <% }); %>
-      </ul>
-  </div>
+  <form role="form" id="regform" action="/seeResult" method="post">
 
-  <div class = "instructions">
-      <p>Click on each contestant to view his/her information</p>
-  </div>
+    <div class="form-group">
+      <input required type="password" class="form-control" name="pass" id="pass" placeholder="KEY to RESULTS">
+    </div>
 
+    <button type="submit" id="regBtn" class="btn btn-primary">UNLOCK RESULTS</button>
+  </form>
   </div>
+  </script>
 </body>
 </html>

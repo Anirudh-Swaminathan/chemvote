@@ -34,6 +34,7 @@
       <li><a href="/showMyIp">Show IP</a></li>
       <li><a href="/register">Register</a></li>
       <li><a href="/show/all">View Contestants</a></li>
+      <li><a href="/seeResult">RESULT</a></li>
     </ul>
 
     <h1>Chemical Official CR Elections</h1>
@@ -42,31 +43,36 @@
     <br><br>
     <form role="form" id="voteform" action="/submitVote" method="post">
     <br>
+
       <h2>Boys</h2>
       <br>
-      <div class="form-group">
-        <label class="radio-inline">
-          <input type="radio" name="votedCandidateBoy" id="votedCandidate1" value="Boy 1" checked="checked">Boy 1
-        </label>
-      </div>
-      <div class="form-group">
-        <label class="radio-inline">
-          <input type="radio" name="votedCandidateBoy" id="votedCandidate2" value="Boy 2">Boy 2
-        </label>
-      </div>
+      <% var i=0; %>
+      <% conts.forEach(function (contestant, index){ %>
+              <% if(contestant.gender === 'M'){ %>
+                  <% var a = contestant.name; %>
+                  <div class="form-group">
+                  <label class="radio-inline">
+                  <input type="radio" name="votedCandidateBoy" id="votedCandidate1" checked="checked" value=<%= a %>><%= a %>
+                  </label>
+              </div>
+              <% i++; %>
+              <% } %>
+          <% }); %>
       <br>
       <h2>Girls</h2>
       <br>
-      <div class="form-group">
-        <label class="radio-inline">
-          <input type="radio" name="votedCandidateGirl" id="votedCandidate3" value="Girl 1" checked="checked">Girl 1
-        </label>
-      </div>
-      <div class="form-group">
-        <label class="radio-inline">
-          <input type="radio" name="votedCandidateGirl" id="votedCandidate4" value="Girl 2">Girl 2
-        </label>
-      </div>
+      <% var j=0; %>
+      <% conts.forEach(function (contestant, index){ %>
+              <% if(contestant.gender === 'F'){ %>
+                  <% var a = contestant.name; %>
+                  <div class="form-group">
+                  <label class="radio-inline">
+                  <input type="radio" name="votedCandidateGirl" id="votedCandidate1" checked="checked" value=<%= a %>><%= a %>
+                  </label>
+              </div>
+              <% } %>
+          <% }); %>
+          <% j++; %>
       <br><br><br>
       <button type="submit" class="btn btn-primary">Submit Vote</button>
     </form>
