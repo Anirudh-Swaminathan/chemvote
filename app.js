@@ -17,6 +17,7 @@ var doneVote = require('./routes/doneVote');
 var seeResult = require('./routes/seeResult');
 var showMyIp = require('./routes/showMyIp');
 var register = require('./routes/register');
+var show = require('./routes/show');
 
 var app = express();
 
@@ -61,6 +62,7 @@ app.use('/doneVote', doneVote);
 app.use('/seeResult', seeResult);
 app.use('/showMyIp', showMyIp);
 app.use('/register', register);
+app.use('/show', show);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
