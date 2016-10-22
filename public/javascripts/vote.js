@@ -37,7 +37,7 @@ function isOneChecked() {
       return false;
   }
   else {
-    var confirmVote = confirm("You sure to vote -|" + girlName + "|- and -|" + boyName + "|- ?");
+    var confirmVote = confirm("You sure to vote -|" + decodeURI(girlName) + "|- and -|" + decodeURI(boyName) + "|- ?");
     if(confirmVote) {
       return true;
     }

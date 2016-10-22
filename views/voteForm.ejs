@@ -34,10 +34,10 @@
       
       <% conts.forEach(function (contestant, index){ %>
               <% if(contestant.gender === 'F'){ %>
-                  <% var a = contestant.name; %>
+                  <% var a = encodeURI(contestant.name); %>
                   <div class="form-group">
                   <label class="radio-inline">
-                  <input class="girl" type="radio" name="votedCandidateGirl" value=<%= a %>><%= a %>
+                  <input class="girl" type="radio" name="votedCandidateGirl" value=<%= a %>><%= contestant.name %>
                   </label>
               </div>
               <% } %>
@@ -50,10 +50,10 @@
       
       <% conts.forEach(function (contestant, index){ %>
               <% if(contestant.gender === 'M'){ %>
-                  <% var a = contestant.name; %>
+                  <% var a = encodeURI(contestant.name); %>
                   <div class="form-group">
                   <label class="radio-inline">
-                  <input class="boy" type="radio" name="votedCandidateBoy" value=<%= a %>><%= a %>
+                  <input class="boy" type="radio" name="votedCandidateBoy" value=<%= a %>><%= contestant.name %>
                   </label>
               </div>
               

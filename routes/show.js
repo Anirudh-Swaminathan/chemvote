@@ -21,8 +21,9 @@ router.get('/all', function(req, res, next) {
 });
 
 router.get('/:name', function(req, res, next){
-    var name = req.params.name;
+    var name = req.params.name;             //decodeURI is not required with req.params, only with req.body
     var conn = req.app.locals.connection;
+    console.log("This is the searched name: " + name);
     conn.query("SELECT name, gender, agenda FROM vote.Votes WHERE name LIKE ?", name + "%", function(err, rows, fields){
         if(err) {
             res.render('showCont', {errors : err.msg, name : '', gender : '', agenda : ''});

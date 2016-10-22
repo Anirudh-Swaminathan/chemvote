@@ -39,7 +39,7 @@
       <ul>
           <% conts.forEach(function (contestant, index){ %>
               <% if(contestant.gender === 'M'){ %>
-                  <% var a = contestant.name; var hre = '/show/'+a; %>
+                  <% var a = contestant.name; var hre = encodeURI('/show/'+a); %>
                   <li><a href = <%= hre %> ><%= contestant.name %></a></li>
               <% } %>
           <% }); %>
@@ -51,7 +51,7 @@
       <ul>
           <% conts.forEach(function (contestant, index){ %>
               <% if(contestant.gender === 'F'){ %>
-                  <% var a = contestant.name; var hre = '/show/'+a; %>
+                  <% var a = contestant.name; var hre = encodeURI('/show/'+a); %>
                   <li><a href = <%= hre %> ><%= contestant.name %></a></li>
               <% } %>
           <% }); %>

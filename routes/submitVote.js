@@ -15,8 +15,8 @@ router.post('/', function(req, res, next) {
   	req.sanitize('votedCandidateBoy').escape();
   	req.sanitize('votedCandidateGirl').escape();
 
-  	var votedCandidateBoy = req.body.votedCandidateBoy;
-  	var votedCandidateGirl = req.body.votedCandidateGirl;
+  	var votedCandidateBoy = decodeURI(req.body.votedCandidateBoy);
+  	var votedCandidateGirl = decodeURI(req.body.votedCandidateGirl);
   	var ip = req.clientIp;
 	var conn = req.app.locals.connection;
  	var query = "UPDATE Votes SET votes=votes+1 WHERE name LIKE '" + votedCandidateBoy + "%" + "' OR name LIKE'" + votedCandidateGirl + "%" +"';";
