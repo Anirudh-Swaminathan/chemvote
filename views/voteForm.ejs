@@ -12,7 +12,7 @@
   </head>
   <body>
 
-  <div class="container" id="contId">
+  <div class="container-fluid" id="contId">
 
     <ul class="breadcrumb" id="ulId">
       <li><a href="/">Home</a></li>
@@ -29,6 +29,21 @@
     <br><br>
     <form role="form" id="voteform" action="/submitVote" method="post">
     <br>
+      <h2>Girls</h2>
+      <br>
+      
+      <% conts.forEach(function (contestant, index){ %>
+              <% if(contestant.gender === 'F'){ %>
+                  <% var a = contestant.name; %>
+                  <div class="form-group">
+                  <label class="radio-inline">
+                  <input class="girl" type="radio" name="votedCandidateGirl" value=<%= a %>><%= a %>
+                  </label>
+              </div>
+              <% } %>
+          <% }); %>
+
+      <br>
 
       <h2>Boys</h2>
       <br>
@@ -43,22 +58,7 @@
               </div>
               
               <% } %>
-          <% }); %>
-      <br>
-      <h2>Girls</h2>
-      <br>
-      
-      <% conts.forEach(function (contestant, index){ %>
-              <% if(contestant.gender === 'F'){ %>
-                  <% var a = contestant.name; %>
-                  <div class="form-group">
-                  <label class="radio-inline">
-                  <input class="girl" type="radio" name="votedCandidateGirl" value=<%= a %>><%= a %>
-                  </label>
-              </div>
-              <% } %>
-          <% }); %>
-          
+          <% }); %>   
       <br><br><br>
       <button type="submit" class="btn btn-primary" onclick="return btnClick()">Submit Vote</button>
     </form>
