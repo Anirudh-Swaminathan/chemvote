@@ -23,3 +23,13 @@ h1, h2, h3 {
   background-color: #000000;
   color: #ff0055;
 }
+
+html, body {
+    height: 100%;
+}
+.container-fluid {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* overflow-y: hidden;  don't show content that exceeds my height */
+}
