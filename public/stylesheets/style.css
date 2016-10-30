@@ -31,6 +31,6 @@ html, body {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    text-align: center;
+    /* text-align: center; */
     /* overflow-y: hidden;  don't show content that exceeds my height */
 }
