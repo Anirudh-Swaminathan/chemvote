@@ -24,7 +24,9 @@
     </ul>
 
     <h1>Chemical Official CR Elections</h1>
-    <p id="errorPara"><%= errors %></p>
+    <% if(errors!="") { %>
+      <p id="errorPara" class="alert alert-warning"><%= errors %></p>
+    <% } %>
     <h2><p>Choose to VOTE:</p></h2>
     <br><br>
     <form role="form" id="voteform" action="/submitVote" method="post">
