@@ -20,8 +20,8 @@ router.post('/', middleware.seeResult,function(req, res, next) {
     		throw err;
     		return;
    		}
-   		var maxBoy = { name: "", votes: -1 };
-   		var maxGirl = { name: "", votes: -1 };
+   		var maxBoy = { name: "", votes: 0 };
+   		var maxGirl = { name: "", votes: 0 };
    		/*
    		maxBoy.votes = rows[0].votes;
    		maxBoy.name = rows[0].name;
@@ -34,15 +34,20 @@ router.post('/', middleware.seeResult,function(req, res, next) {
    				maxBoy.name = row.name;
    			}
    			if(row.gender=="M" && maxBoy.votes == row.votes && (maxBoy.name != row.name)) {
-   				maxBoy.name = maxBoy.name + " and " + row.name;
+				if(maxBoy.name === "") maxBoy.name = row.name;
+   				else maxBoy.name = maxBoy.name + " and " + row.name;
    			}
    			if(row.gender=="F" && maxGirl.votes < row.votes) {
    				maxGirl.votes = row.votes;
    				maxGirl.name = row.name;
    			}
    			if(row.gender=="F" && maxGirl.votes == row.votes && (maxGirl.name != row.name)) {
-   				maxGirl.name = maxGirl.name + " and " + row.name;
+				if(maxGirl.name === "") maxGirl.name = row.name;
+   				else maxGirl.name = maxGirl.name + " and " + row.name;
    			}
+			console.log("\nmaxBoy is "+maxBoy.name);
+			console.log("\nmaxGirl is "+maxGirl.name);
+			console.log("\nCurrent contestant is "+row.name);
    		});
   		boyCR = maxBoy.name;
   		girlCR = maxGirl.name;
