@@ -20,8 +20,8 @@ router.post('/', middleware.seeResult,function(req, res, next) {
     		throw err;
     		return;
    		}
-   		var maxBoy = { name: "", votes: 0 };
-   		var maxGirl = { name: "", votes: 0 };
+   		var maxBoy = { name: "", votes: -1 };
+   		var maxGirl = { name: "", votes: -1 };
    		/*
    		maxBoy.votes = rows[0].votes;
    		maxBoy.name = rows[0].name;
