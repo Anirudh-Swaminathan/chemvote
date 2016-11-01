@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
                 console.log(rows[i]);
                 console.log('\n');
             }
-            res.render('voteForm', { conts : conts});
+            res.render('voteForm', { conts : conts, errors: ""});
         }
     });
 });

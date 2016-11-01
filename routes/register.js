@@ -42,8 +42,9 @@ router.post('/', function(req, res, next) {
 
     var errors = req.validationErrors();
     if(!errors){
-        conn.query("INSERT into vote.Votes(name, votes, gender, agenda) VALUES(?,?,?,?)", [name, 0, gender, agenda], function(err, result){
+        conn.query("INSERT into Votes(name, votes, gender, agenda) VALUES(?,?,?,?)", [name, 0, gender, agenda], function(err, result){
             if(err) {
+                console.log("SQL error: " + err);
                 console.log("SQL Error!!\n");
                 console.log(err.code);
                 console.log('\n');
